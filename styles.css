@@ -1,0 +1,74 @@
+:root {
+    --primary-color: #599e6e;
+    --secondary-color: #0f4920;
+    --accent-color: #108947;
+    --background-color: #9ba391;
+    --text-color: #000000;
+}
+/* This is the body. */
+body {
+    font-family:'Courier New', Courier, monospace;
+    font-size: 6px;
+    font-weight: bold;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+/* This is for the account tab. */
+h1 {
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: var(--text-color);
+    text-align: right;
+}
+/* This is for the sleep tab. */
+h2 {
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: var(--text-color);
+    text-align: right;
+
+}
+/* This is for the hydration tab. */
+h3 {
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: var(--text-color)
+    text-align: right;
+}
+h4 {
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: var(--text-color)
+    text-align: right;
+}
+h5 {
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: var(--text-color)
+    text-align: right;
+}
+h6 {
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: var(--text-color)
+    text-align: right;
+}
+/* This is for our header/logo. */
+h7 {
+    font-size: 6rem;
+    font-weight: bolder;
+    color: var(--text-color);
+    text-align: left;
+}
+/* This is for any text added. */
+p {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.button-primary {
+    background-color: var(--accent-color);
+}
+.button-secondary {
+    background-color: var(--accent-color);
+}
