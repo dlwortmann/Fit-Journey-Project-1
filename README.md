@@ -6,13 +6,14 @@ N/A
 ## Using FitJourney
 Start by adding data into the input fields to provide the application with data. Hit submit to store the data to be included in the graphing functions. Track your overall wellness overtime as you frequently add new data points.
 ## Credits
-Jacob Peterson: 
-Builder of HTML and Project Manager
-https://github.com/Jpeterson1118
-Madeline Funk: 
-Styled with CSS 
-https://github.com/maddiefunk
-Danny Wortmann:
-Assistant to Jacob and Maddie 
-https://github.com/dlwortmann
+Jacob Peterson:<br /> 
+Builder of HTML and Project Manager<br />
+https://github.com/Jpeterson1118<br />
+Madeline Funk:<br />
+Styled with CSS<br />
+https://github.com/maddiefunk<br />
+Danny Wortmann:<br />
+Assistant to Jacob and Maddie<br />
+https://github.com/dlwortmann<br />
 ## License
+To be added later
