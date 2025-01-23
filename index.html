@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.9.0/dist/css/foundation.min.css" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.9.0/dist/js/foundation.min.js" crossorigin="anonymous" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.9.0/dist/js/foundation.min.js" crossorigin="anonymous" defer></script>
     <title>FitJourny</title>
 </head>
 
@@ -36,38 +36,36 @@
             </div>
             <div class="data-box">
                 <label for="food-input">Food Intake:</label>
-                <ul class="food-dropdown">
-                    <li>
-                        <a href="#">Type of Food</a>
-                        <ul class="selection">
-                            <li>Meat:</li>
-                            <li>Veg:</li>
-                            <li>Fats:</li>
-                            <li>Sugars:</li>
-                        </ul>
-                    </li>
-                </ul>
+                <select name="food" id="food-selector">
+                    <option value="">--Please choose and option --</option>
+                    <option value="meat">Meat</option>
+                    <option value="veg">Vegetables</option>
+                    <option value="fat">Fats</option>
+                    <option value="sugar">Sugars</option>
+                </select>
                 <input type="number" id="food-input" name="food-input">
             </div>
             <div class="data-box">
                 <label for="excercise-input">Minutes Excercised:</label>
                 <ul class="excercise-dropdown">
                     <li>
-                        <a href="#">Cardio:</a>
-                        <ul class="cardio-selection">
-                            <li>Walking:</li>
-                            <li>Running:</li>
-                            <li>Swimming:</li>
-                            <li>Jumprope</li>
-                        </ul>
+                        <label for="cardio-selection">Cardio</label>
+                        <select name="cardio-selection" id="cardio-selection">
+                            <option value="">--Please choose and option --</option>
+                            <option value="walk">Walking</option>
+                            <option value="run">Running</option>
+                            <option value="swim">Swimming</option>
+                            <option value="jumprope">Jumprope</option>
+                        </select>
                     </li>
                     <li>
-                        <ul class="weights-selection">
-                            <a href="#">Weights:</a>
-                            <li>Bench:</li>
-                            <li>Squat:</li>
-                            <li>Deadlift:</li>
-                        </ul>
+                        <label for="weights-selection">Weights</label>
+                        <select name="weights-selection" id="weights-selection">
+                            <option value="">--Please choose and option --</option>
+                            <option value="bench">Bench Press</option>
+                            <option value="squat">Squats</option>
+                            <option value="deadlift">Deadlift</option>
+                        </select>
                     </li>
                 <ul>
                 <input type="time" id="excercise-input" name="excercise-input">
