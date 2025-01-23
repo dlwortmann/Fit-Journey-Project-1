@@ -1,0 +1,43 @@
+header {
+    height: 100px;
+    width: 100%;
+    border-bottom: 10px solid #9ba391 ;
+    background-color: #599e6e;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}   
+
+h1 {
+    font-size: 2rem;
+    padding-top: 45px;
+}
+
+nav {
+    font-size: 1.5rem;
+    padding-top: 70px;
+}
+
+aside {
+    width: 50%;
+    border: 5px solid black;
+}
+footer {
+    height: 50px;
+    width: 100%;
+    border-top: 10px solid #9ba391 ;
+    background-color: #599e6e;
+}
+main {
+    display: inline;
+
+}
+.graph {
+    height: 200px;
+    width: 50%;
+    flex-wrap: wrap;
+    flex: 2 0 200px;
+    padding: 5px;
+    border-style: solid;
+    border-width: 1px;
+}
