@@ -1,3 +1,4 @@
+
 header {
     height: 100px;
     width: 100%;
@@ -6,6 +7,7 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding: 5px;
 }   
 
 h1 {
@@ -19,7 +21,7 @@ nav {
 }
 
 aside {
-    width: 50%;
+    width: 100%;
     border: 5px solid black;
 }
 footer {
@@ -34,10 +36,38 @@ main {
 }
 .graph {
     height: 200px;
-    width: 50%;
+    width: 100%;
     flex-wrap: wrap;
-    flex: 2 0 200px;
+    flex: 1 0 100%;
     padding: 5px;
     border-style: solid;
     border-width: 1px;
+}
+
+@media screen and (min-width: 1000px) {
+    main {
+        display: flex;
+    }
+    
+    aside {
+        width: 50%;
+    }
+
+    .graphs {
+        display: flex;
+        flex-wrap: wrap;
+        width: 50%;
+    }
+    .graph {
+        flex: 1 0 25%;
+        height: 50%;
+        width: 50%;
+
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    .graphs {
+        flex-direction: row;
+    }
 }
