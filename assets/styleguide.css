@@ -1,0 +1,132 @@
+/* color palette eat it up */
+:root {
+    --primary-color: #3767d0;
+    --secondary-color: #066182;
+    --accent-color: #78baf0;
+    --background-color: #bfdff1;
+    --text-color: #000000;
+}
+
+/* Fonts and text and whatot */
+body {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 6px;
+    font-weight: bold;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-color);
+}
+
+/* This is for the sidebar on the left. */
+.sidebar {
+    background-color: var(--accent-color);
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+}
+.content {
+    margin-left: 20px;
+   
+}
+
+/* food dropdown styling  */
+.food-dropdown {
+    list-style-type: none;
+    padding: 0;
+}
+.food-dropdown li {
+    color:  #2d18a4;
+    font-size:7px;
+    padding: 0.5px;
+}
+.food-dropdown a {
+    text-decoration: underline;
+    color: #00345f;
+}
+
+/* carido styling */
+.cardio-selection {
+    list-style-type: none;
+    padding: 0;
+}
+.cardio-selection li {
+    color:  #2d18a4;
+    font-size: 7px;
+    padding: 0.5px;
+}
+.cardio-selection a {
+    text-decoration: underline;
+    color:#00345f;
+}
+
+/* weights  */
+.weights-selection li {
+    color: #2d18a4;
+    font-size:7px;
+    padding: 0.5px;
+}
+.exercise-dropdown {
+
+}
+
+/* box whAT */
+.data-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+.data-box {
+    margin: 0;
+    padding: 0;
+    border: 1px solid #2d18a4;
+    border-radius: 3px;
+    background-color: var(--accent-color);
+}
+.data-box label {
+    font-size:10px;
+    color: var(--text-color);
+    font-weight: bold;
+    display: block;
+
+}
+
+
+/* This is for our header/logo. */
+h1 {
+    display: block;
+    justify-content: space-around;
+    text-align: center;
+    font-size: 6rem;
+    font-weight:bold;
+    color: var(--secondary-color);
+}
+
+main {
+    display: flex;
+    flex: 1 1 0;
+    max-width: 1200px;
+    margin: 1% auto;
+}
+
+/* This is for any text added. */
+p {
+    font-size: 1rem;
+    font-weight: normal;
+    color: var(--text-color);
+    text-align: center;
+}
+
+/* button colors yktd */
+.button-primary {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border: none;
+    cursor: pointer;
+}
+.button-secondary {
+    background-color: var(--accent-color);
+}
