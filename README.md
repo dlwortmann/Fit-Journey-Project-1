@@ -4,7 +4,7 @@ As individuals who are looking to be more health conscious, we wanted to create 
 ## Installation
 N/A
 ## Using FitJourney
-Start by adding data into the input fields in the aside element to provide the application with data about user goals Hit submit to store the data to be included in the graphing functions. Track your overall wellness overtime as you frequently add new data points.
+Start by adding data into the input fields in the to provide the application with data about user goals Hit submit to store the data to be included in the graphing functions. Track your overall wellness overtime as you frequently add new data points.
 ## Credits
 Jacob Peterson:<br /> 
 Builder of HTML. JavaScript and  and Project Manager<br />
