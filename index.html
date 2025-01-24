@@ -7,7 +7,9 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.9.0/dist/js/foundation.min.js" crossorigin="anonymous" defer></script>
-    <title>FitJourny</title>
+
+    <title>FitJourney</title>
+
 </head>
 
 <body>
@@ -27,15 +29,15 @@
                 <input type="date" id="date" name="date">
             </div>
             <div class="data-box">
-                <label for="sleep-intake">Hours of Sleep:</label>
+                <label for="sleep-intake">Sleep (Hours):</label>
                 <input type="number" id="sleep-intake" name="sleep-intake">
             </div>
             <div class="data-box">
-                <label for="water-intake">Water Intake:</label>
+                <label for="water-intake">Water Intake (ounces):</label>
                 <input type="number" id="water-intake" name="water">
             </div>
             <div class="data-box">
-                <label for="food-intake">Food Intake:</label>
+                <label for="food-intake">Food Intake (grams):</label>
                 <select name="food" id="food-selector">
                     <option value="">--Please choose and option --</option>
                     <option value="meat">Meat</option>
@@ -45,30 +47,30 @@
                 </select>
                 <input type="number" id="food-intake" name="food-intake">
             </div>
+
             <div class="data-box">
-                <label for="excercise-input">Minutes Excercised:</label>
-                <ul class="excercise-dropdown">
-                    <li>
-                        <label for="cardio-selector">Cardio</label>
-                        <select name="cardio-selector" id="cardio-selector">
-                            <option value="">--Please choose and option --</option>
-                            <option value="walk">Walking</option>
-                            <option value="run">Running</option>
-                            <option value="swim">Swimming</option>
-                            <option value="jumprope">Jumprope</option>
-                        </select>
-                    </li>
-                    <li>
-                        <label for="weights-selector">Weights</label>
-                        <select name="weights-selector" id="weights-selector">
-                            <option value="">--Please choose and option --</option>
-                            <option value="bench">Bench Press</option>
-                            <option value="squat">Squats</option>
-                            <option value="deadlift">Deadlift</option>
-                        </select>
-                    </li>
-                <ul>
-                <input type="time" id="excercise-input" name="excercise-input">
+                <label for="cardio-input">Cardio (minutes):</label>
+                <select name="cardio-selector" id="cardio-selector">
+                    <option value="">--Please choose and option --</option>
+                    <option value="walk">Walking</option>
+                    <option value="run">Running</option>
+                    <option value="swim">Swimming</option>
+                    <option value="jumprope">Jumprope</option>
+                </select>
+                <input type="number" id="cardio-input" name="cardio-input">
+
+                <label for="weights-input">Weights (minutes)</label>
+                <select name="weights-selector" id="weights-selector">
+                    <option value="">--Please choose and option --</option>
+                    <option value="bench">Bench Press</option>
+                    <option value="squat">Squats</option>
+                    <option value="deadlift">Deadlift</option>
+                </select>
+                <input type="number" id="weights-input" name="weights-input">
+            </div>
+            <div class="data-box">
+                <input type="submit">
+
             </div>
             <div class="data-box">
                 <input type="submit">
