@@ -8,6 +8,7 @@ header {
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 5px;
+    margin-bottom: 10px;
 }   
 
 h1 {
@@ -29,9 +30,10 @@ footer {
     width: 100%;
     border-top: 10px solid #9ba391 ;
     background-color: #599e6e;
+    margin-top: 10px;
 }
 main {
-    display: inline;
+    display: block;
 
 }
 
@@ -44,33 +46,68 @@ main {
 }    
     
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1024px) {
     main {
         display: flex;
     }
-    
     aside {
         width: 50%;
-        border-width: 3px;
+        border-width: 2px;
     }
 
+    section {
+        display: flex;
+        flex-direction: column;
+        height: 50px;
+    
+    }
+  
     .graphs {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
-        height: 100%;
-        width: 100%;
+        height: 300px;
+        width: 750px;
     }
     .graph {
+        height: 331px;
         padding: 2px;
-        border-width: 3px ;
-        
-
+        border-width: 1px;
     }
 }
 
-@media screen and (min-width: 1500px) {
-    .graphs {
-        flex-direction: row;
+@media screen and (min-width: 1200px) {
+    html, body {
+        padding: 0;
+        margin: 0;
     }
+
+    html {
+        height: 100%;
+    }
+
+    body {
+        min-height: 100%;
+    }
+    
+    section {
+        display: flex;
+        flex-direction: column;
+        height: 50px;
+    
+    }
+  
+    .graphs {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        height: 300px;
+        width: 1000px;
+    }
+    .graph {
+        height: 330.5px;
+        padding: 2px;
+        border-width: 1.5px;
+    }
+
 }
