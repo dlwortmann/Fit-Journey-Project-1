@@ -66,11 +66,11 @@ main {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
-        height: 300px;
+        height: 93%;
         width: 750px;
     }
     .graph {
-        height: 331px;
+        height: 100%;
         padding: 2px;
         border-width: 1px;
     }
@@ -101,11 +101,11 @@ main {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
-        height: 300px;
+        height: 93%;
         width: 1000px;
     }
     .graph {
-        height: 330.5px;
+        height: 100%;
         padding: 2px;
         border-width: 1.5px;
     }
