@@ -1,25 +1,39 @@
 $(document).foundation();
 
 // gets user inputs
-const date = document.getElementById('date').value
-const hoursOfSleep = document.getElementById('sleep-intake').value
-const ouncesOfWater = document.getElementById('water-intake').value
-const ouncesOfFood = document.getElementById('food-intake').value
-const minutesOfCardio = document.getElementById('cardio-input').value
-const minutesOfWeights = document.getElementById('weights-input').value
+const dateEl = document.getElementById('date')
+const hoursOfSleepEl = document.getElementById('sleep-intake')
+const ouncesOfWaterEl = document.getElementById('water-intake')
+const ouncesOfFoodEl = document.getElementById('food-intake')
+const minutesOfCardioEl = document.getElementById('cardio-input')
+const minutesOfWeightsEl = document.getElementById('weights-input')
 
 
 // gets user selections
-typeOfFood = document.getElementById('food-selector').value
-typeOfCardio = document.getElementById('cardio-selector').value
-typeOfWeights = document.getElementById('weights-selector').value
+const typeOfFoodEl = document.getElementById('food-selector')
+const typeOfCardioEl = document.getElementById('cardio-selector')
+const typeOfWeightsEL = document.getElementById('weights-selector')
 
+const xValues = ['Monday', 'Tuesday', 'Wednsday', 'Thursdy', 'Friday', 'Saturday', 'Sunday']
+
+// store calories eaten and burned
+let totalCalsEaten = 0
+let totalCalsBurned = 0
 
 let graphData = []
 
 const compareValues = () =>{
+    // get values
+    const ouncesOfFood = ouncesOfFoodEl.value
+    const minutesOfCardio = minutesOfCardioEl.value
+    const minutesOfWeights = minutesOfWeightsEl.value
+
+    const typeOfFood = typeOfFoodEl.value
+    const typeOfCardio = typeOfCardioEl.value
+    const typeOfWeights = typeOfWeightsEL.value
+
     // open error message
-    if(!date){
+    if(!day){
         $('error-1').foundation('reveal', 'open')
         return;
     }
@@ -41,9 +55,9 @@ const compareValues = () =>{
 
     let calories = 0;
     let caloriesBurned = 0;
-    // store calories eaten and burned
-    let totalCalsEaten = 0
-    let totalCalsBurned = 0
+    // reset totals
+    totalCalsEaten = 0
+    totalCalsBurned = 0
     
     // calculate calories eaten
     switch(typeOfFood){
@@ -96,11 +110,22 @@ const compareValues = () =>{
             break;
     }
     totalCalsBurned += caloriesBurned
-
-    return totalCalsEaten
-    return totalCalsBurned
 }
 
 const compileData = () => {
-    
+    const day = Date(Date.now())
+    const hoursOfSleep = hoursOfSleepEl.value
+    const ouncesOfWater = ouncesOfWaterEl.value
+
+    const dataObject = {
+        day: day,
+        sleep: hoursOfSleep,
+        water: ouncesOfWater,
+        calsEaten: totalCalsEaten,
+        calsburned: totalCalsBurned
+    }
+
+    graphData.push(dataObject)
+
+    localStorage.setItem('graphData', JSON.stringify(graphData))
 }
