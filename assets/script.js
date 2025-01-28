@@ -14,7 +14,7 @@ const typeOfFoodEl = document.getElementById('food-selector')
 const typeOfCardioEl = document.getElementById('cardio-selector')
 const typeOfWeightsEL = document.getElementById('weights-selector')
 
-const xValues = ['Monday', 'Tuesday', 'Wednsday', 'Thursdy', 'Friday', 'Saturday', 'Sunday']
+const xValues = ['Monday', 'Tuesday', 'Wednesday', 'Thursdy', 'Friday', 'Saturday', 'Sunday']
 
 // store calories eaten and burned
 let totalCalsEaten = 0
@@ -127,5 +127,22 @@ const compileData = () => {
 
     graphData.push(dataObject)
 
+    while(graphData.length > 7){
+        graphData.shift()
+    }
+
     localStorage.setItem('graphData', JSON.stringify(graphData))
+}
+
+const buildGraphs = () =>{
+    const tempItem = JSON.parse(localStorage.getItem('graphData')) || []
+    const days = []
+    const sleep = []
+    const water = []
+    const calsIn = []
+    const calsOut = []
+    
+    if (!tempItem[0]){
+        return;
+    }    
 }
