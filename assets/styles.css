@@ -120,7 +120,7 @@ select[name="date"] {
 /* class styling */
 
 .graph {
-    height: 500px;
+    height: 300px;
     width: 100%;
     flex-wrap: wrap;
     flex: 1 0 100%;
@@ -168,7 +168,7 @@ select[name="date"] {
         display: flex;
     }
     aside {
-        width: 50%;
+        width: 25%;
         border-width: 2px;
     }
 
@@ -188,6 +188,7 @@ select[name="date"] {
     }
     .graph {
         height: 100%;
+        width: 37.5%;
         padding: 2px;
         border-width: 1px;
     }
@@ -206,6 +207,10 @@ select[name="date"] {
     body {
         min-height: 100%;
     }
+
+    aside {
+        width: 25%
+    } 
     
     section {
         display: flex;

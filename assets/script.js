@@ -14,7 +14,7 @@ const typeOfFoodEl = document.getElementById('food-selector')
 const typeOfCardioEl = document.getElementById('cardio-selector')
 const typeOfWeightsEL = document.getElementById('weights-selector')
 
-const xValues = ['Monday', 'Tuesday', 'Wednesday', 'Thursdy', 'Friday', 'Saturday', 'Sunday']
+const xValues = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
 // store calories eaten and burned
 let totalCalsEaten = 0
@@ -134,6 +134,7 @@ const compileData = () => {
     localStorage.setItem('graphData', JSON.stringify(graphData))
 }
 
+
 const buildGraphs = () =>{
     const tempItem = JSON.parse(localStorage.getItem('graphData')) || []
     const days = []
@@ -158,121 +159,69 @@ buildGraphs()
 
 
 // Line Chart Syntax 
-const sleepValues = sleep.push(tempItem[i.sleep])
-const waterValues = water.push(tempItem[i.water])
-const calsInValues = calsIn.push(tempItem[i.calsEaten])
-const calsOutValues = calsOut.push(tempItem[i.calsBurned])
+////const sleepValues = sleep.push(tempItem[i.sleep])
+//const waterValues = water.push(tempItem[i.water])
+//const calsInValues = calsIn.push(tempItem[i.calsEaten])
+//const calsOutValues = calsOut.push(tempItem[i.calsBurned])
+const yValue = [7,9,10,11,14,14,15]; //Placeholder values until function is completed.
 
-const sleepGraph = new Chart("sleep-graph", {
+new Chart("sleep-graph", {
     type: "line",
     data: {
         labels: xValues,
         datasets: [{
-            backgroundColor: "rgba(0,0.255,1.0)",
-            borderColor: "rgba(0,0.255,1.0)",
-            data: sleepValues 
+            data: yValue,
+            borderColor: '#cf7c1e',
+            fill: false
         }]
     },
-    options: {
-        scales: {
-            x: {
-                title: {
-                    display: true,
-                    text: "Date"
-                }
-            },
-            y: {
-                title: {
-                    display: true,
-                    text: "Hours of Sleep"
-                }
-            }
+        options: {
+            legend: {display: false},
         }
-    
-    }
-
 });
 
-const waterGraph = new Chart("water-graph", {
+new Chart("water-graph", {
     type: "line",
     data: {
         labels: xValues,
         datasets: [{
-            backgroundColor: "rgba(0,0.255,1.0)",
-            borderColor: "rgba(0,0.255,1.0)",
-            data: waterValues
+            data: yValue,
+            borderColor: '#cf7c1e', 
+            fill: false
         }]
     },
-    options: {
-        scales: {
-            x: {
-                title: {
-                    display: true,
-                    text: "Date"
-                }
-            },
-            y: {
-                title: {
-                    display: true,
-                    text: "Ounces of Water"
-                }
-            }
+        options: {
+            legend: {display: false},
         }
-    }
 });
+ 
 
-const foodGraph = new Chart("food-graph", {
+new Chart("food-graph", {
     type: "line",
     data: {
         labels: xValues,
         datasets: [{
-            backgroundColor: "rgba(0,0.255,1.0)",
-            borderColor: "rgba(0,0.255,1.0)",
-            data: calsInValues 
-        }]
-    },
-    options: {
-        scales: {
-            x: {
-                title: {
-                    display: true,
-                    text: "Date"
-                }
-            },
-            y: {
-                title: {
-                    display: true,
-                    text: "Caloric Intake"
-                }
-            }
-        }
-    }
-});
+            data: yValue,
+            borderColor: '#cf7c1e',
+            fill: false
+        }]  
+    }, 
+        options:{
+            legend: {display: false}
+    }       
+  });
 
-const exerciseGraph = new Chart("exercise-graph", {
+new Chart("exercise-graph", {
     type: "line",
     data: {
         labels: xValues,
         datasets: [{
-            backgroundColor: "rgba(0,0.255,1.0)",
-            borderColor: "rgba(0,0.255,1.0)",
-            data: calsOutValues
+            data: yValue,
+            borderColor: '#cf7c1e',
+            fill: false
         }]
     },
-    options: {
-        scales: {
-            x: {
-                title: {
-                    display: true,
-                    text: "Date"
-                }
-            },
-            y: {
-                title: {
-                    display: true,
-                    text: "Calories Burned"
-                }
-            }
-        }
+        options:{
+            legend: {display: false}
     }
 });
