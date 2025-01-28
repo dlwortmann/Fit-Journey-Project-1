@@ -145,4 +145,12 @@ const buildGraphs = () =>{
     if (!tempItem[0]){
         return;
     }    
+
+    for(i=0; i<tempItem.length; i++) {
+        days.push(tempItem[i.day])
+        sleep.push(tempItem[i.sleep])
+        water.push(tempItem[i.water])
+        calsIn.push(tempItem[i.calsEaten])
+        calsOut.push(tempItem[i.calsBurned])
+    }
 }
