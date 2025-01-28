@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.9.0/dist/css/foundation.min.css" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="./assets/styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js" defer></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.9.0/dist/js/foundation.min.js" crossorigin="anonymous" defer></script>
-    <script src="./assets/script.js" defer></script>
+    <script src="/assets/script.js" defer></script>
     <title>FitJourney</title>
 
 </head>
@@ -25,10 +25,6 @@
     <main>
         <aside>
             <h2>Data Input</h2>
-            <div class="data-box">
-                <label for="date">Date:</label>
-                <input type="date" id="date" name="date">
-            </div>
             <div class="data-box">
                 <label for="sleep-intake">Sleep (Hours):</label>
                 <input type="number" id="sleep-intake" name="sleep-intake">
@@ -79,10 +75,10 @@
             <h2>Your Progress</h2>
         </section>    
         <section class="graphs">
-            <div class="graph" id="sleep-graph">d</div>
-            <div class="graph" id="water-graph">d</div>
-            <div class="graph" id="food-graph">d</div>
-            <div class="graph" id="excercise-graph">d</div>
+            <canvas class="graph" id="sleep-graph">d</canvas>
+            <canvas class="graph" id="water-graph">d</canvas>
+            <canvas class="graph" id="food-graph">d</canvas>
+            <canvas class="graph" id="excercise-graph">d</canvas>
         </section>
         </div>
     </main>
