@@ -1,45 +1,50 @@
 $(document).foundation();
 
-// gets user input elements
-const sleepIntakeEl = document.getElementById('sleep-intake')
-const waterIntakeEl = document.getElementById('water-intake')
-const foodIntakeEl = document.getElementById('food-intake')
-
-const cardioInputEl = document.getElementById('cardio-input')
-const weightsInputEl = document.getElementById('weights-input')
+// gets user inputs
+const date = document.getElementById('date').value
+const hoursOfSleep = document.getElementById('sleep-intake').value
+const ouncesOfWater = document.getElementById('water-intake').value
+const ouncesOfFood = document.getElementById('food-intake').value
+const minutesOfCardio = document.getElementById('cardio-input').value
+const minutesOfWeights = document.getElementById('weights-input').value
 
 
 // gets user selections
-foodSlectorEle = document.getElementById('food-selector')
-cardioSelectorEle = document.getElementById('cardio-selector')
-weightsSelectorEle = document.getElementById('weights-selector')
+typeOfFood = document.getElementById('food-selector').value
+typeOfCardio = document.getElementById('cardio-selector').value
+typeOfWeights = document.getElementById('weights-selector').value
 
-// store calories eaten and burned
-let totalCalsEaten = 0
-let totalCalsBurned = 0
+
+let graphData = []
 
 const compareValues = () =>{
-    // get amout of /food/excercise
-    const gramOfFood = foodIntakeEl.value
-    const minutesOfCardio = cardioInputEl.value
-    const minutesOfWeights = weightsInputEl.value
-
-    // get type of food/excercise
-    const typeOfFood = foodSlectorEle.value
-    const typeOfCardio = cardioSelectorEle.value
-    const typeOfWeights = weightsSelectorEle.value
-
-    if(sleepIntakeEl.value === '' || waterIntakeEl.value === '' || foodIntakeEl.value === '' || cardioInputEl.value === '' || weightsInputEl.value === ''){
-        $('#error-1').foundation('reveal', 'open')
+    // open error message
+    if(!date){
+        $('error-1').foundation('reveal', 'open')
+        return;
     }
-
-    if(typeOfFood && foodIntakeEl.value === '' || typeOfCardio && cardioInputEl.value === '' || typeOfWeights && weightsInputEl.value === ''){
+    
+    if(!hoursOfSleep && !ouncesOfWater && !ouncesOfFood && !minutesOfCardio && !minutesOfWeights){
         $('#error-2').foundation('reveal', 'open')
+        return;
+    }
+    
+    if(typeOfFood && !ouncesOfFood || typeOfCardio &&  !minutesOfCardio || typeOfWeights && !minutesOfWeights){
+        $('#error-3').foundation('reveal', 'open')
+        return;
+    }
+    
+    if(!typeOfFood && ouncesOfFood || !typeOfCardio &&  minutesOfCardio || !typeOfWeights && minutesOfWeights){
+        $('#error-4').foundation('reveal', 'open')
+        return;
     }
 
-    let calories;
-    let caloriesBurned;
-
+    let calories = 0;
+    let caloriesBurned = 0;
+    // store calories eaten and burned
+    let totalCalsEaten = 0
+    let totalCalsBurned = 0
+    
     // calculate calories eaten
     switch(typeOfFood){
         case 'Meat':
@@ -91,4 +96,11 @@ const compareValues = () =>{
             break;
     }
     totalCalsBurned += caloriesBurned
+
+    return totalCalsEaten
+    return totalCalsBurned
+}
+
+const compileData = () => {
+    
 }
