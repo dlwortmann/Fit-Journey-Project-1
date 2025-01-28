@@ -141,3 +141,21 @@ p {
 .data-box input[type="submit"]:hover {
     background-color: var(--button-hover-color);
 }
+
+/* graphs?! */ 
+.graphs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.graph {
+    flex: 1;
+    margin: 10px;
+}
+
+
+/* footer! */
+footer {
+    align-items: center; 
+}
