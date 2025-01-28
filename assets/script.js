@@ -14,7 +14,7 @@ const typeOfFoodEl = document.getElementById('food-selector')
 const typeOfCardioEl = document.getElementById('cardio-selector')
 const typeOfWeightsEL = document.getElementById('weights-selector')
 
-const xValues = ['Monday', 'Tuesday', 'Wednesday', 'Thursdy', 'Friday', 'Saturday', 'Sunday']
+const xValues = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursdy', 'Friday', 'Saturday']
 
 // store calories eaten and burned
 let totalCalsEaten = 0
@@ -147,10 +147,30 @@ const buildGraphs = () =>{
     }    
 
     for(i=0; i<tempItem.length; i++) {
-        days.push(tempItem[i.day])
-        sleep.push(tempItem[i.sleep])
-        water.push(tempItem[i.water])
-        calsIn.push(tempItem[i.calsEaten])
-        calsOut.push(tempItem[i.calsBurned])
+        days.push(tempItem[i].day);
+        sleep.push(tempItem[i].sleep);
+        water.push(tempItem[i].water);
+        calsIn.push(tempItem[i].calsEaten);
+        calsOut.push(tempItem[i].calsBurned);
     }
+
+}
+
+const submitButton = document.querySelector('.data-box input[type="submit"]');
+submitButton.addEventListener('click', function(event) {
+    event.preventDefault();
+
+    compareValues();
+    compileData();
+    buildGraphs();
+});
+
+function compareValues() {
+    console.log("compareValues called");
+}
+function compileData() {
+    console.log("compileData called");
+}
+function buildGraphs() {
+    console.log("buildGraphs called");
 }
