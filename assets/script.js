@@ -154,3 +154,125 @@ const buildGraphs = () =>{
         calsOut.push(tempItem[i.calsBurned])
     }
 }
+buildGraphs()
+
+
+// Line Chart Syntax 
+const sleepValues = sleep.push(tempItem[i.sleep])
+const waterValues = water.push(tempItem[i.water])
+const calsInValues = calsIn.push(tempItem[i.calsEaten])
+const calsOutValues = calsOut.push(tempItem[i.calsBurned])
+
+const sleepGraph = new Chart("sleep-graph", {
+    type: "line",
+    data: {
+        labels: xValues,
+        datasets: [{
+            backgroundColor: "rgba(0,0.255,1.0)",
+            borderColor: "rgba(0,0.255,1.0)",
+            data: sleepValues 
+        }]
+    },
+    options: {
+        scales: {
+            x: {
+                title: {
+                    display: true,
+                    text: "Date"
+                }
+            },
+            y: {
+                title: {
+                    display: true,
+                    text: "Hours of Sleep"
+                }
+            }
+        }
+    
+    }
+
+});
+
+const waterGraph = new Chart("water-graph", {
+    type: "line",
+    data: {
+        labels: xValues,
+        datasets: [{
+            backgroundColor: "rgba(0,0.255,1.0)",
+            borderColor: "rgba(0,0.255,1.0)",
+            data: waterValues
+        }]
+    },
+    options: {
+        scales: {
+            x: {
+                title: {
+                    display: true,
+                    text: "Date"
+                }
+            },
+            y: {
+                title: {
+                    display: true,
+                    text: "Ounces of Water"
+                }
+            }
+        }
+    }
+});
+
+const foodGraph = new Chart("food-graph", {
+    type: "line",
+    data: {
+        labels: xValues,
+        datasets: [{
+            backgroundColor: "rgba(0,0.255,1.0)",
+            borderColor: "rgba(0,0.255,1.0)",
+            data: calsInValues 
+        }]
+    },
+    options: {
+        scales: {
+            x: {
+                title: {
+                    display: true,
+                    text: "Date"
+                }
+            },
+            y: {
+                title: {
+                    display: true,
+                    text: "Caloric Intake"
+                }
+            }
+        }
+    }
+});
+
+const exerciseGraph = new Chart("exercise-graph", {
+    type: "line",
+    data: {
+        labels: xValues,
+        datasets: [{
+            backgroundColor: "rgba(0,0.255,1.0)",
+            borderColor: "rgba(0,0.255,1.0)",
+            data: calsOutValues
+        }]
+    },
+    options: {
+        scales: {
+            x: {
+                title: {
+                    display: true,
+                    text: "Date"
+                }
+            },
+            y: {
+                title: {
+                    display: true,
+                    text: "Calories Burned"
+                }
+            }
+        }
+    }
+});
