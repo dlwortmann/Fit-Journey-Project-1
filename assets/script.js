@@ -156,8 +156,6 @@ const buildGraphs = () =>{
     }
 
 }
-buildGraphs()
-
 
 // Line Chart Syntax 
 ////const sleepValues = sleep.push(tempItem[i.sleep])
@@ -226,3 +224,22 @@ new Chart("exercise-graph", {
             legend: {display: false}
     }
 });
+
+const submitButton = document.querySelector('.data-box input[type="submit"]');
+submitButton.addEventListener('click', function(event){
+    event.preventDefault();
+
+    compareValues();
+    compileData();
+    buildGraphs();
+});
+
+compareValues() {
+    console.log("compareValues called");
+}
+compileData() {
+    console.log("compileData called");
+}
+buildGraphs() {
+    console.log("buildGraphs called");
+}
