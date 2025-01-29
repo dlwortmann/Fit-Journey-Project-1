@@ -7,12 +7,13 @@ N/A
 Start by adding data into the input fields to provide the application with data. Hit submit to store the data to be included in the graphing functions. Track your overall wellness overtime as you frequently add new data points.
 ## Credits
 Jacob Peterson: 
-Builder of HTML and Project Manager
+Builder of HTML, Foundation Wizard and Project Manager
 https://github.com/Jpeterson1118
-Madeline Funk: 
-Styled with CSS 
+Maddie Funk: 
+Styling with CSS, Function Builder
 https://github.com/maddiefunk
 Danny Wortmann:
-Assistant to Jacob and Maddie 
+Page Formatting and Chart Architect
 https://github.com/dlwortmann
 ## License
+Licensed under the MIT license.

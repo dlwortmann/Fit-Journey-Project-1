@@ -14,7 +14,7 @@ const typeOfFoodEl = document.getElementById('food-selector')
 const typeOfCardioEl = document.getElementById('cardio-selector')
 const typeOfWeightsEL = document.getElementById('weights-selector')
 
-const xValues = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursdy', 'Friday', 'Saturday']
+const xValues = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 
 // store calories eaten and burned
 let totalCalsEaten = 0
@@ -134,6 +134,7 @@ const compileData = () => {
     localStorage.setItem('graphData', JSON.stringify(graphData))
 }
 
+
 const buildGraphs = () =>{
     const tempItem = JSON.parse(localStorage.getItem('graphData')) || []
     const days = []
@@ -155,22 +156,73 @@ const buildGraphs = () =>{
     }
 
 }
+buildGraphs()
 
-const submitButton = document.querySelector('.data-box input[type="submit"]');
-submitButton.addEventListener('click', function(event) {
-    event.preventDefault();
 
-    compareValues();
-    compileData();
-    buildGraphs();
+// Line Chart Syntax 
+////const sleepValues = sleep.push(tempItem[i.sleep])
+//const waterValues = water.push(tempItem[i.water])
+//const calsInValues = calsIn.push(tempItem[i.calsEaten])
+//const calsOutValues = calsOut.push(tempItem[i.calsBurned])
+const yValue = [7,9,10,11,14,14,15]; //Placeholder values until function is completed.
+
+new Chart("sleep-graph", {
+    type: "line",
+    data: {
+        labels: xValues,
+        datasets: [{
+            data: yValue,
+            borderColor: '#cf7c1e',
+            fill: false
+        }]
+    },
+        options: {
+            legend: {display: false},
+        }
 });
 
-function compareValues() {
-    console.log("compareValues called");
-}
-function compileData() {
-    console.log("compileData called");
-}
-function buildGraphs() {
-    console.log("buildGraphs called");
-}
+new Chart("water-graph", {
+    type: "line",
+    data: {
+        labels: xValues,
+        datasets: [{
+            data: yValue,
+            borderColor: '#cf7c1e', 
+            fill: false
+        }]
+    },
+        options: {
+            legend: {display: false},
+        }
+});
+ 
+
+new Chart("food-graph", {
+    type: "line",
+    data: {
+        labels: xValues,
+        datasets: [{
+            data: yValue,
+            borderColor: '#cf7c1e',
+            fill: false
+        }]  
+    }, 
+        options:{
+            legend: {display: false}
+    }       
+  });
+
+new Chart("exercise-graph", {
+    type: "line",
+    data: {
+        labels: xValues,
+        datasets: [{
+            data: yValue,
+            borderColor: '#cf7c1e',
+            fill: false
+        }]
+    },
+        options:{
+            legend: {display: false}
+    }
+});
