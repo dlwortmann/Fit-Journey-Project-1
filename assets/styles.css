@@ -5,8 +5,18 @@
     --accent-color: #78baf0;
     --background-color: #bfdff1;
     --text-color: #000000;
-    --button-color:rgb(223, 180, 99);  
-    --button-hover-color:#cf7c1e; 
+    --button-color:rgb(241, 202, 130);  
+    --button-hover-color:#db984c; 
+}
+/* Fonts and text and whatot */
+body {
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 6px;
+    font-weight: bold;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--background-color);
 }
 
 header {
@@ -26,18 +36,30 @@ a {
     border: 1px dashed var(--secondary-color);
 }
 
-h1 {
-    font-size: 2rem;
-    padding-top: 45px;
-}
 
 nav {
     font-size: 1.5rem;
     padding-top: 50px;
 }
 
+/* Data Input/My Progress headers */
+h2 {
+    text-align: left;
+    font-size: 38px;
+    background-color: var(--button-color);
+    border: 1px solid var(--secondary-color);
+    color: var(--text-color);
+}
+
+/* This is for any text added. */
+p {
+    font-size: 1rem;
+    font-weight: normal;
+    color: var(--text-color);
+    text-align: center;
+}
+
 aside { 
-    margin-top: 10px;
     width: 100%;
     border: 1px solid var(--secondary-color);
 }
@@ -54,123 +76,7 @@ main {
 
 }
 
-.graph {
-    height: 500px;
-    width: 100%;
-    flex-wrap: wrap;
-    flex: 1 0 100%;
-    border: 1px solid var(--secondary-color);
-}    
-    
 
-@media screen and (min-width: 1000px) {
-    main {
-        display: flex;
-    }
-    aside {
-        width: 50%;
-        border-width: 2px;
-    }
-
-    section {
-        display: flex;
-        flex-direction: column;
-        height: 50px;
-    
-    }
-  
-    .graphs {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        height: 93%;
-        width: 750px;
-    }
-    .graph {
-        height: 100%;
-        padding: 2px;
-        border-width: 1px;
-    }
-}
-
-@media screen and (min-width: 1200px) {
-    html, body {
-        padding: 0;
-        margin: 0;
-    }
-
-    html {
-        height: 100%;
-    }
-
-    body {
-        min-height: 100%;
-    }
-    
-    section {
-        display: flex;
-        flex-direction: column;
-        height: 50px;
-    
-    }
-  
-    .graphs {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
-        height: 93%;
-        width: 1000px;
-    }
-    .graph {
-        height: 100%;
-        padding: 2px;
-        border-width: 1.5px;
-    }
-
-}
-
-/* Fonts and text and whatot */
-body {
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 6px;
-    font-weight: bold;
-    line-height: 1.5;
-    display: flex;
-    flex-direction: column;
-    background-color: var(--background-color);
-}
-
-/* this is not a sidebar */
-.header {
-    
-    width: 100%;
-    height: 80px;
-    position: fixed;
-    left: 0;
-    top: 0;
-    z-index: 1000;
-}
-.content {
-    margin-left: 20px;
-}
-
-/* styling for da data boxes  */
-.data-box {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-bottom: 10px;
-    justify-content: space-between;
-    border: 1 px solid var(--primary-color);
-    border-radius: 3px;
-    background-color: whitesmoke;
-}
-.data-box label {
-    font-size:1rem;
-    color: var(--text-color);
-    font-weight: bold;
-    display: block;
-}
 label {
     margin-right: 10px;
 }
@@ -182,19 +88,15 @@ input[type="number"] {
 /* food */
 select[name="food"] {
   display: inline-block;
-  margin-right: 10px;
 }
-
 /* cardio */
 select[name="cardio-selector"] {
     display: inline-block;
-    margin-right: 10px;
 }
 
 /* weights */
 select[name="weights-selector"] {
    display: inline-block;
-   margin-right: 10px;
 }
 
 /* water */
@@ -215,21 +117,32 @@ select[name="date"] {
     margin-right: 10px;
 }
 
+/* class styling */
 
-/* Data Input header */
-h2 {
-    text-align: left;
-    font-size: 38px;
-    color: var(--text-color);
+.graph {
+    height: 300px;
+    width: 100%;
+    flex-wrap: wrap;
+    flex: 1 0 100%;
+    border: 1px solid var(--secondary-color);
+}    
+
+/* styling for da data boxes  */
+.data-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    border: 1 px solid var(--primary-color);
+    border-radius: 3px;
+    background-color: whitesmoke;
 }
-
-
-/* This is for any text added. */
-p {
-    font-size: 1rem;
-    font-weight: normal;
+.data-box label {
+    font-size:1rem;
     color: var(--text-color);
-    text-align: center;
+    font-weight: bold;
+    display: block;
 }
 
 /* submit button makeup yktd */
@@ -248,3 +161,76 @@ p {
 .data-box input[type="submit"]:hover {
     background-color: var(--button-hover-color);
 }
+
+
+@media screen and (min-width: 1000px) {
+    main {
+        display: flex;
+    }
+    aside {
+        width: 25%;
+        border-width: 2px;
+    }
+
+    section {
+        display: flex;
+        flex-direction: column;
+        height: 55px;
+    
+    }
+  
+    .graphs {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        height: 93%;
+        width: 750px;
+    }
+    .graph {
+        height: 100%;
+        width: 37.5%;
+        padding: 2px;
+        border-width: 1px;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    html, body {
+        padding: 0;
+        margin: 0;
+    }
+
+    html {
+        height: 100%;
+    }
+
+    body {
+        min-height: 100%;
+    }
+
+    aside {
+        width: 25%
+    } 
+    
+    section {
+        display: flex;
+        flex-direction: column;
+        height: 55px;
+    
+    }
+  
+    .graphs {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        height: 93%;
+        width: 1000px;
+    }
+    .graph {
+        height: 100%;
+        padding: 2px;
+        border-width: 1.5px;
+    }
+
+}
+

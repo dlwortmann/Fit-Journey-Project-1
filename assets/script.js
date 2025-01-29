@@ -12,9 +12,7 @@ const minutesOfWeightsEl = document.getElementById('weights-input')
 // gets user selections
 const typeOfFoodEl = document.getElementById('food-selector')
 const typeOfCardioEl = document.getElementById('cardio-selector')
-const typeOfWeightsEL = document.getElementById('weights-selector')
-
-const xValues = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursdy', 'Friday', 'Saturday']
+const typeOfWeightsEl = document.getElementById('weights-selector')
 
 // store calories eaten and burned
 let totalCalsEaten = 0
@@ -30,15 +28,15 @@ const compareValues = () =>{
 
     const typeOfFood = typeOfFoodEl.value
     const typeOfCardio = typeOfCardioEl.value
-    const typeOfWeights = typeOfWeightsEL.value
+    const typeOfWeights = typeOfWeightsEl.value
 
-    // open error message
-    if(!day){
-        $('error-1').foundation('reveal', 'open')
-        return;
-    }
+    //open error message
+    //if(!day){
+    //  $('error-1').foundation('reveal', 'open')
+    //return;
+    // } day is not defined at this point, don't have a day input in the HTML
     
-    if(!hoursOfSleep && !ouncesOfWater && !ouncesOfFood && !minutesOfCardio && !minutesOfWeights){
+    if(!hoursOfSleepEl && !ouncesOfWaterEl && !ouncesOfFood && !minutesOfCardio && !minutesOfWeights){
         $('#error-2').foundation('reveal', 'open')
         return;
     }
@@ -134,6 +132,7 @@ const compileData = () => {
     localStorage.setItem('graphData', JSON.stringify(graphData))
 }
 
+
 const buildGraphs = () =>{
     const tempItem = JSON.parse(localStorage.getItem('graphData')) || []
     const days = []
@@ -145,4 +144,132 @@ const buildGraphs = () =>{
     if (!tempItem[0]){
         return;
     }    
+
+    for(i=0; i<tempItem.length; i++) {
+        days.push(tempItem[i].day);
+        sleep.push(tempItem[i].sleep);
+        water.push(tempItem[i].water);
+        calsIn.push(tempItem[i].calsEaten);
+        calsOut.push(tempItem[i].calsBurned);
+    }
+
 }
+
+//submit button function
+const submitButton = document.querySelector('.data-box input[type="submit"]');
+submitButton.addEventListener('click', function(event){
+    event.preventDefault();
+
+    compareValues();
+    compileData();
+    buildGraphs();
+});
+
+//calling above functions and console logging for confirmation
+compareValues() 
+console.log("compareValues called");
+compileData()
+console.log("compileData called");
+buildGraphs()
+console.log("buildGraphs called");
+
+// Line Chart Syntax 
+const sleepValues = sleep.push(tempItem[i].sleep)
+const waterValues = water.push(tempItem[i].water)
+const calsInValues = calsIn.push(tempItem[i].calsEaten)
+const calsOutValues = calsOut.push(tempItem[i].calsBurned)
+const xValues = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+const yValue = [7,9,10,11,14,14,15]; //Placeholder values until function is completed.
+
+new Chart("sleep-graph", {
+    type: "line",
+    data: {
+        labels: xValues,
+        datasets: [{
+            data: sleepValues,
+            borderColor: '#cf7c1e',
+            fill: false
+        }]
+    },
+        options: {
+            scales: {
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Hours Slept'
+                    }
+                }
+            },
+            legend: {display: false},
+        }
+});
+
+new Chart("water-graph", {
+    type: "line",
+    data: {
+        labels: xValues,
+        datasets: [{
+            data: waterValues,
+            borderColor: '#cf7c1e', 
+            fill: false
+        }]
+    },
+        options: {
+            scales: {
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Ounces of Water'
+                    }
+                }
+            },
+            legend: {display: false},
+        }
+});
+ 
+
+new Chart("food-graph", {
+    type: "line",
+    data: {
+        labels: xValues,
+        datasets: [{
+            data: calsInValues,
+            borderColor: '#cf7c1e',
+            fill: false
+        }]  
+    }, 
+        options:{
+            scales: {
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Caloric Intake'
+                    }
+                }
+            },
+            legend: {display: false}
+    }       
+  });
+
+new Chart("exercise-graph", {
+    type: "line",
+    data: {
+        labels: xValues,
+        datasets: [{
+            data: calsOutValues,
+            borderColor: '#cf7c1e',
+            fill: false
+        }]
+    },
+        options:{
+            scales: {
+                y: {
+                    title: {
+                        display: true,
+                        text: 'Calories Burned'
+                    }
+                }
+            },
+            legend: {display: false}
+    }
+});
