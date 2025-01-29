@@ -14,7 +14,7 @@ const typeOfFoodEl = document.getElementById('food-selector')
 const typeOfCardioEl = document.getElementById('cardio-selector')
 const typeOfWeightsEL = document.getElementById('weights-selector')
 
-const xValues = ['Monday', 'Tuesday', 'Wednesday', 'Thursdy', 'Friday', 'Saturday', 'Sunday']
+const xValues = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursdy', 'Friday', 'Saturday']
 
 // store calories eaten and burned
 let totalCalsEaten = 0
@@ -113,7 +113,7 @@ const compareValues = () =>{
 }
 
 const compileData = () => {
-    const day = Date(Date.now())
+    const day = new Date().getDay()
     const hoursOfSleep = hoursOfSleepEl.value
     const ouncesOfWater = ouncesOfWaterEl.value
 
