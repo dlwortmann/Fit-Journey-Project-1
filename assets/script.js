@@ -156,7 +156,26 @@ const buildGraphs = () =>{
     }
 
 }
-buildGraphs()
+
+const submitButton = document.querySelector('.data-box input[type="submit"]');
+submitButton.addEventListener('click', function(event){
+    event.preventDefault();
+
+    compareValues();
+    compileData();
+    buildGraphs();
+});
+
+compareValues() {
+    console.log("compareValues called");
+}
+compileData() {
+    console.log("compileData called");
+}
+buildGraphs() {
+    console.log("buildGraphs called");
+}
+
 
 
 // Line Chart Syntax 
