@@ -153,31 +153,11 @@ const buildGraphs = () =>{
         calsOut.push(tempItem[i].calsBurned);
     }
 
-}
-
-//submit button function
-const submitButton = document.querySelector('.data-box input[type="submit"]');
-submitButton.addEventListener('click', function(event){
-    event.preventDefault();
-
-    compareValues();
-    compileData();
-    buildGraphs();
-});
-
-//calling above functions and console logging for confirmation
-compareValues() 
-console.log("compareValues called");
-compileData()
-console.log("compileData called");
-buildGraphs()
-console.log("buildGraphs called");
-
 // Line Chart Syntax 
-const sleepValues = sleep.push(tempItem[i].sleep)
-const waterValues = water.push(tempItem[i].water)
-const calsInValues = calsIn.push(tempItem[i].calsEaten)
-const calsOutValues = calsOut.push(tempItem[i].calsBurned)
+const sleepValues = sleep
+const waterValues = water
+const calsInValues = calsIn
+const calsOutValues = calsOut
 const xValues = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
 const yValue = [7,9,10,11,14,14,15]; //Placeholder values until function is completed.
 
@@ -272,4 +252,25 @@ new Chart("exercise-graph", {
             },
             legend: {display: false}
     }
+});    
+
+}
+
+//submit button function
+const submitButton = document.querySelector('.data-box input[type="submit"]');
+submitButton.addEventListener('click', function(event){
+    event.preventDefault();
+
+    compareValues();
+    compileData();
+    buildGraphs();
 });
+
+//calling above functions and console logging for confirmation
+compareValues() 
+console.log("compareValues called");
+compileData()
+console.log("compileData called");
+buildGraphs()
+console.log("buildGraphs called");
+
