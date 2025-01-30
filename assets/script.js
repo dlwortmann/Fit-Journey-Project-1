@@ -111,7 +111,7 @@ const compareValues = () =>{
 }
 
 const compileData = () => {
-    const day = Date(Date.now())
+    const day = new Date().getDay()
     const hoursOfSleep = hoursOfSleepEl.value
     const ouncesOfWater = ouncesOfWaterEl.value
 
