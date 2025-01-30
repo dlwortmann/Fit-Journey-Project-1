@@ -133,6 +133,8 @@ const compileData = () => {
 }
 
 
+const xValues = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+
 const buildGraphs = () =>{
     const tempItem = JSON.parse(localStorage.getItem('graphData')) || []
     const days = []
@@ -152,7 +154,99 @@ const buildGraphs = () =>{
         calsIn.push(tempItem[i].calsEaten);
         calsOut.push(tempItem[i].calsBurned);
     }
-
+    
+    new Chart("sleep-graph", {
+        type: "line",
+        data: {
+            labels: xValues,
+            datasets: [{
+                data: sleep,
+                borderColor: '#cf7c1e',
+                fill: false
+            }]
+        },
+            options: {
+                scales: {
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Hours Slept'
+                        }
+                    }
+                },
+                legend: {display: false},
+            }
+    });
+    
+    new Chart("water-graph", {
+        type: "line",
+        data: {
+            labels: xValues,
+            datasets: [{
+                data: water,
+                borderColor: '#cf7c1e', 
+                fill: false
+            }]
+        },
+            options: {
+                scales: {
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Ounces of Water'
+                        }
+                    }
+                },
+                legend: {display: false},
+            }
+    });
+     
+    
+    new Chart("food-graph", {
+        type: "line",
+        data: {
+            labels: xValues,
+            datasets: [{
+                data: calsIn,
+                borderColor: '#cf7c1e',
+                fill: false
+            }]  
+        }, 
+            options:{
+                scales: {
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Caloric Intake'
+                        }
+                    }
+                },
+                legend: {display: false}
+        }       
+      });
+    
+    new Chart("exercise-graph", {
+        type: "line",
+        data: {
+            labels: xValues,
+            datasets: [{
+                data: calsOut,
+                borderColor: '#cf7c1e',
+                fill: false
+            }]
+        },
+            options:{
+                scales: {
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Calories Burned'
+                        }
+                    }
+                },
+                legend: {display: false}
+        }
+    });
 }
 
 //submit button function
@@ -174,102 +268,9 @@ buildGraphs()
 console.log("buildGraphs called");
 
 // Line Chart Syntax 
-const sleepValues = sleep.push(tempItem[i].sleep)
-const waterValues = water.push(tempItem[i].water)
-const calsInValues = calsIn.push(tempItem[i].calsEaten)
-const calsOutValues = calsOut.push(tempItem[i].calsBurned)
-const xValues = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
-const yValue = [7,9,10,11,14,14,15]; //Placeholder values until function is completed.
+// const sleepValues = sleep.push(tempItem[i].sleep)
+// const waterValues = water.push(tempItem[i].water)
+// const calsInValues = calsIn.push(tempItem[i].calsEaten)
+// const calsOutValues = calsOut.push(tempItem[i].calsBurned)
+// const yValue = [7,9,10,11,14,14,15]; //Placeholder values until function is completed.
 
-new Chart("sleep-graph", {
-    type: "line",
-    data: {
-        labels: xValues,
-        datasets: [{
-            data: sleepValues,
-            borderColor: '#cf7c1e',
-            fill: false
-        }]
-    },
-        options: {
-            scales: {
-                y: {
-                    title: {
-                        display: true,
-                        text: 'Hours Slept'
-                    }
-                }
-            },
-            legend: {display: false},
-        }
-});
-
-new Chart("water-graph", {
-    type: "line",
-    data: {
-        labels: xValues,
-        datasets: [{
-            data: waterValues,
-            borderColor: '#cf7c1e', 
-            fill: false
-        }]
-    },
-        options: {
-            scales: {
-                y: {
-                    title: {
-                        display: true,
-                        text: 'Ounces of Water'
-                    }
-                }
-            },
-            legend: {display: false},
-        }
-});
- 
-
-new Chart("food-graph", {
-    type: "line",
-    data: {
-        labels: xValues,
-        datasets: [{
-            data: calsInValues,
-            borderColor: '#cf7c1e',
-            fill: false
-        }]  
-    }, 
-        options:{
-            scales: {
-                y: {
-                    title: {
-                        display: true,
-                        text: 'Caloric Intake'
-                    }
-                }
-            },
-            legend: {display: false}
-    }       
-  });
-
-new Chart("exercise-graph", {
-    type: "line",
-    data: {
-        labels: xValues,
-        datasets: [{
-            data: calsOutValues,
-            borderColor: '#cf7c1e',
-            fill: false
-        }]
-    },
-        options:{
-            scales: {
-                y: {
-                    title: {
-                        display: true,
-                        text: 'Calories Burned'
-                    }
-                }
-            },
-            legend: {display: false}
-    }
-});
