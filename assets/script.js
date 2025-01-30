@@ -7,6 +7,9 @@ const ouncesOfWaterEl = document.getElementById('water-intake')
 const ouncesOfFoodEl = document.getElementById('food-intake')
 const minutesOfCardioEl = document.getElementById('cardio-input')
 const minutesOfWeightsEl = document.getElementById('weights-input')
+const ouncesOfFood = ouncesOfFoodEl.value
+const minutesOfCardio = minutesOfCardioEl.value
+const minutesOfWeights = minutesOfWeightsEl.value
 
 
 // gets user selections
@@ -22,10 +25,6 @@ let graphData = []
 
 const compareValues = () =>{
     // get values
-    const ouncesOfFood = ouncesOfFoodEl.value
-    const minutesOfCardio = minutesOfCardioEl.value
-    const minutesOfWeights = minutesOfWeightsEl.value
-
     const typeOfFood = typeOfFoodEl.value
     const typeOfCardio = typeOfCardioEl.value
     const typeOfWeights = typeOfWeightsEl.value
@@ -35,21 +34,6 @@ const compareValues = () =>{
     //  $('error-1').foundation('reveal', 'open')
     //return;
     // } day is not defined at this point, don't have a day input in the HTML
-    
-    if(!hoursOfSleepEl && !ouncesOfWaterEl && !ouncesOfFood && !minutesOfCardio && !minutesOfWeights){
-        $('#error-2').foundation('reveal', 'open')
-        return;
-    }
-    
-    if(typeOfFood && !ouncesOfFood || typeOfCardio &&  !minutesOfCardio || typeOfWeights && !minutesOfWeights){
-        $('#error-3').foundation('reveal', 'open')
-        return;
-    }
-    
-    if(!typeOfFood && ouncesOfFood || !typeOfCardio &&  minutesOfCardio || !typeOfWeights && minutesOfWeights){
-        $('#error-4').foundation('reveal', 'open')
-        return;
-    }
 
     let calories = 0;
     let caloriesBurned = 0;
@@ -108,6 +92,24 @@ const compareValues = () =>{
             break;
     }
     totalCalsBurned += caloriesBurned
+}
+
+const showErrors = () => {
+    if(!hoursOfSleepEl.value && !ouncesOfWaterEl.value && !ouncesOfFoodEl.value && !minutesOfCardioEl.value && !minutesOfWeightsEl.value){
+        $('#error-2').foundation('open');
+        return;
+    }
+    else if(typeOfFoodEl.Value && !ouncesOfFoodEl.value || typeOfCardioEl.value &&  !minutesOfCardioEl.value || typeOfWeightsEl.value && !minutesOfWeightsEl.Value){
+        $('#error-3').foundation('open');
+        return;
+    }
+    else if(!typeOfFoodEl.value && ouncesOfFoodEl.value || !typeOfCardioEl.Value &&  minutesOfCardioEl.value || !typeOfWeightsEl.value && minutesOfWeightsEl.value){
+        $('#error-4').foundation('open');
+        return;
+    }
+    else{
+        return;
+    }
 }
 
 const compileData = () => {
@@ -255,6 +257,7 @@ submitButton.addEventListener('click', function(event){
     event.preventDefault();
 
     compareValues();
+    showErrors()
     compileData();
     buildGraphs();
 });
