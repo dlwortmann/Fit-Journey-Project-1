@@ -156,7 +156,7 @@ const buildGraphs = () =>{
         calsIn.push(tempItem[i].calsEaten);
         calsOut.push(tempItem[i].calsBurned);
     }
-    
+
     new Chart("sleep-graph", {
         type: "line",
         data: {
@@ -276,4 +276,3 @@ console.log("buildGraphs called");
 // const calsInValues = calsIn.push(tempItem[i].calsEaten)
 // const calsOutValues = calsOut.push(tempItem[i].calsBurned)
 // const yValue = [7,9,10,11,14,14,15]; //Placeholder values until function is completed.
-
